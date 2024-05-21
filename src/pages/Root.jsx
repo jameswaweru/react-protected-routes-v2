@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import Login from './Login'
 import NavigationBar from '../components/NavigationBar'
+import { useLocalStorage } from '../utils/LocalStorage';
+import { User } from '../models/User';
+
 
 function Root() {
-    const [user, setUser] = useState(null)
+     const [user, setUser] = useLocalStorage('user', User)
 
     const loginUser = () => {
         setUser({ id: 1, username: "abhishek", role: ["user", "admin"] })
@@ -16,11 +19,13 @@ function Root() {
 
     useEffect(() => {
         //setUser({ id: 1, username: "abhishek", role: ["user", "admin"] })
+        console.log('im in root component')
     }, [])
 
     useEffect(() => {
         //You can add your code for updating phase of component
         console.log("Updating in Functional Component")
+        
     }, [user])
 
     return (
