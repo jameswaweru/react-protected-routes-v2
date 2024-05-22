@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { RootContext } from './Root'
 
 function Home() {
+  const [user , logoutUser] = useContext(RootContext)
   return (
     <div>
-      <p className=' mt-28'>Home</p>
+      <p className=' mt-28'>Home {user.name}</p>
     </div>
   )
 }

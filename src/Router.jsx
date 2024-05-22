@@ -19,6 +19,11 @@ const router = createBrowserRouter(
                     element: <LandingPage />,
                     index: true
                 },
+                {
+                    path: "/home",
+                    element: <Home />,
+                    index: true
+                },
                 // {
                 //     path: "/profile",
                 //     element: <ProtectedRoute><Profile/></ProtectedRoute>
@@ -42,11 +47,7 @@ const router = createBrowserRouter(
                             path: "/editprofile",
                             element: <EditProfile/>
                         },
-                        {
-                            path: "/home",
-                            element: <Home />,
-                            index: true
-                        },
+                        
                         {
                             path: "/products/:category/:filter?",
                             element: <Products/>

@@ -23,7 +23,7 @@ function LandingPage() {
     //Runs only on the first render
     inputUsernam.current.focus();
 
-    console.log('checking if logged inn')
+    // console.log('checking if logged inn')
     if(user){
       console.log('logged in')
 
